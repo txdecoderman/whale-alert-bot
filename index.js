@@ -47,6 +47,15 @@ const main = async () => {
         console.log('Sent message:', message)
     })
 
+    ws.on('error', (error) => {
+        console.error('WebSocket error:', error)
+        process.exit(1)
+      })
+    
+      ws.on('close', (code, reason) => {
+        console.log(`Connection closed. Code: ${code}, Reason: ${reason}`)
+        process.exit(0)
+      })
     ws.on('message', (data) => {
         const message = JSON.parse(data)
         // Receive message from WebSocket, format is an object of User Actions
