@@ -42,3 +42,6 @@ THRESHOLD_VALUE_USD=10000
 ```bash
 node index.js
 ```
+
+## Example:
+CAKE whale alert channel https://t.me/+pyguF1KtAyI1ZTQ9
