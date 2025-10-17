@@ -37,3 +37,8 @@ TOKEN_ADDRESS=0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82
 # min value 10_000 USD
 THRESHOLD_VALUE_USD=10000
 ```
+
+- Run command 
+```bash
+node index.js
+```
