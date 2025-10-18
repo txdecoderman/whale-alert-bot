@@ -1,5 +1,7 @@
 # TELEGRAM WHALE ALERT BOT
-This repo help everyone running a custom telegram whale alert bot for any token on Ethereu, BSC, Base
+This repo help everyone running a custom telegram whale alert bot for any token on Ethereum, BSC, Base
+
+Powered by https://txdecoder.xyz
 
 ## 1. Prepare telegram bot and telegram channel
 - Open telegram
