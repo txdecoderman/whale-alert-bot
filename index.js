@@ -1,4 +1,5 @@
 const { default: axios } = require('axios')
+const { formatBigNumber } = require('./format')
 const dotenv = require('dotenv')
 dotenv.config()
 const WebSocket = require('ws')
@@ -77,7 +78,7 @@ const main = async () => {
                 if (!txHash) continue
                 if (Number(valueUsd) < Number(process.env.THRESHOLD_VALUE_USD)) continue
 
-                const msg = `Amount: ${Number(tokens[0].ui_amount).toFixed(2)} <a href="${EXPLORER_URL}/token/${tokens[0].address}">${tokens[0].symbol}</a> ($${Number(valueUsd).toFixed(2)})\nFrom: <code>${participants[0].address}</code>\nTo: <code>${participants[1].address}</code>\n<a href="${EXPLORER_URL}/tx/${txHash}">View on Explorer</a>`
+                const msg = `Amount: ${formatBigNumber(Number(tokens[0].ui_amount))} <a href="${EXPLORER_URL}/token/${tokens[0].address}">${tokens[0].symbol}</a> ($${formatBigNumber(Number(valueUsd))})\nFrom: <code>${participants[0].address}</code>\nTo: <code>${participants[1].address}</code>\n<a href="${EXPLORER_URL}/tx/${txHash}">View on Explorer</a>`
                 sendTelegramMessage(msg, true)
             }
         }
